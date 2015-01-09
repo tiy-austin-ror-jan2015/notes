@@ -1,6 +1,6 @@
 #Week 1 / Day 3
 ##All The Rubies
-
+![](https://www.drupal.org/files/x-all-the-things-template.png)
 - Regular Expressions (~30 minutes)
   - Natural Languages / Used for matching or making assertions against text / Super useful - gsub - match - find
 - Ranges, Kernel, Object (~30 minutes)
