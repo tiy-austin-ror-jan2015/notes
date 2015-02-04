@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @student.course %>
+</p>
+
+<div class='assignments'>
+  <h3>Assignments</h3>
+  <ul>
+	  <% @student.assignments.each do |assignment| %>
+	    <li> 
+	    	<%= link_to(assignment.title, assignment) %> | <%= 'completed' if assignment.completed %> 
+	    </li>
+	  <% end %>
+  </ul>
+</div>
+
+<div class='new-assignment col-md-6'>
+    <h4>New Assignment</h4>
+	<%= render partial: 'assignments/form', locals: { student_id: @student.id } %>
+</div>
+
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

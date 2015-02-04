@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to "Question", @answer.question, class: 'btn btn-primary' %>
+<p>
+  <strong>Question Body:</strong>
+  <%= @answer.question.body %>
+</p>
+<p>
+  <strong>Body:</strong>
+  <%= @answer.body %>
+</p>
+
+<%= link_to 'Edit', edit_answer_path(@answer) %> |
+<%= link_to 'Back', answers_path %>

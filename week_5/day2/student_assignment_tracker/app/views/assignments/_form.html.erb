@@ -1,0 +1,19 @@
+<%= simple_form_for(@assignment) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <% if local_assigns[:student_id] %>
+        <%= f.input :student_id, as: :hidden, input_html: { value: local_assigns[:student_id] } %>
+    <% else %>
+        <%= f.input :student_id, collection: student_collection %>
+    <% end %>
+    <%= f.input :title %>
+    <%= f.input :grade %>
+    <%= f.input :completed %>
+    <%= f.input :late %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

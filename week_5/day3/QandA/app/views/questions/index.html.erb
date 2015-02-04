@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Questions and Answers</h1>
+
+<div class='qanda-wrapper'>
+  <ul>
+    <% @questions.each do |question| %>
+      <li>
+        <p><h3>Q: <%= question.title + "?" %></h3></p>
+        <p>Body: <%= question.body %></p>
+        <p>Tags: <%= question.tags %></p>
+        <% question.answers.each do |answer| %>
+          <li class=<%= 'correct' if answer.correct %>>
+            A: <%= answer.body %>
+            <% unless answer.correct %>
+              <%= link_to('Correct', mark_as_correct_answer_path(answer), remote: true, class: 'btn btn-default btn-sm') %>
+            <% end %>
+          </li>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

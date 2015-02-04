@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Wits</h1>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wits.each do |wit| %>
+      <tr>
+        <td><%= wit.message %></td>
+        <td>
+          <%= link_to 'Show', wit, class: 'btn btn-default' %>
+          <%= link_to 'Edit', edit_wit_path(wit), class: 'btn btn-default' %>
+          <%= link_to 'Destroy', wit, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wit', new_wit_path %>
