@@ -1,4 +1,4 @@
-#Ruby on Rails Engineering / January 2015 / Austin
+##Ruby on Rails Engineering / January 2015 / Austin
 
 ###Notes
 This repo contains the notes and assignments we do in class each day.
