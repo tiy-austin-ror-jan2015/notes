@@ -1,0 +1,13 @@
+<h1>About Me</h1>
+<%= render :partial => 'about_box' %>
+<h2> I am <%= @name %> </h2>
+<h2> I am <%= @age %> </h2>
+<hr/>
+<h3> I like <%= @foods.join(' and ') %></h3>
+<hr/>
+<h3> Foods I Like </h3>
+<ul>
+  <% @foods.each do |food| %>
+	<li><%= food %></li>
+  <% end %>
+</ul>

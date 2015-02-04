@@ -1,0 +1,34 @@
+$empty: 0;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+.box { 
+  @include border-radius(10px); 
+}
+
+nav {
+  ul {
+    margin: $empty;
+    padding: $empty;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    @include border-radius(1px);
+    display: inline-block;
+    padding: 6px 12px;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

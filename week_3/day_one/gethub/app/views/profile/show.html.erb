@@ -1,0 +1,174 @@
+<header>
+	<div class="header">
+		<div class="left-container clearfix">
+
+			<div class="logo_container">
+				<span class="mega-octicon octicon-mark-github">
+				</span>
+			</div>
+
+			<div class="search_bar">
+						<input type="text" class="form-control" placeholder="Search GetHub">
+			</div>
+
+			<div class="list">
+				<ul>
+					<strong><li>Explore</li></strong>
+					
+					<strong><li>Gist</li></strong>
+					
+					<strong><li>Blog</li></strong>
+					
+					<strong><li>Help</li></strong>
+
+						<div class="pic"><li><img src="https://avatars3.githubusercontent.com/u/6412288?v=3&s=40" />
+						</div>
+
+					<strong><li><%= @profile_data['login'] %><li></strong>
+					<li><span class="octicon octicon-plus"></span></li>
+					<li><span class="octicon octicon-triangle-down"></span></li>
+					<li><span class="octicon octicon-inbox"></span></li>
+					<li><span class="octicon octicon-gear"></span></li>
+					<li><span class="octicon octicon-sign-out"></span></li>
+				</ul>
+			</div>
+
+
+		</div>
+	</div
+</header>
+<div class="col-md-12">
+		<div class="row">
+   		<div class="col-sm-2">
+      		  <!--Sidebar content-->
+      		<div class="profile_pic"><img src='<%= @profile_data["avatar_url"] %>' />
+      		</div>
+
+      		<div class="name"><h1><%= @profile_data['name'] %></h1></div>
+      		<div class="username"><h4><%= @profile_data['login'] %></h4></div>
+
+      		<hr>
+
+      		<div class="location"><span class="octicon octicon-location"></span></div>
+   			<div class="city">Austin, TX</div>
+      		<div class="clock"><span class="octicon octicon-clock"></span></div>
+      		<div class="login">Joined on Jan 15, 2014</div>
+
+      		<hr style="margin-bottom: 0px;">
+
+      		<div class="zero1"><h1>0</h1></div>
+      		<div class="zero2"><h1>0</h1></div>
+      		<div class="zero3"><h1>0</h1></div>
+      		<div class="list2">
+      			<ul>
+      				<li>Followers</li>
+      				<li>Starred</li>
+      				<li>Following</li>
+      			</ul>
+      		</div>
+      		<hr>
+      						
+
+				
+
+    	</div>
+
+    <div class="body_content">
+   		<div class="col-sm-10">
+       		 <!--Body content-->
+       		<ul class="nav nav-tabs">
+				<li role="presentation"><a href="#"><span class="octicon octicon-diff-added"></span>Contributions</a></li>
+
+				<li role="presentation" class="active"><a href="#"><span class="octicon octicon-repo"></span>Repositories</a></li>
+
+				<li role="presentation"><a href="#"><span class="octicon octicon-rss"></span>Public activity</a></li>
+			
+
+				<div class="button"><li>
+				<button type="button" class="btn btn-default btn-sm"><span class="octicon octicon-pencil"></span>Edit Profile</button>
+				</li>
+				</div>
+			</ul>
+
+			<ul class="nav2">
+				<div class="find_bar"><li><input type="text" class="form-control" placeholder="Find a repository..." style="display: inline-block;"></li></div>
+
+				<div class="search_button"><li><button type="button" class="btn btn-default btn-sm">Search</button></li></div>
+			</ul>
+
+			<ul class="nav3" style="float: right;display: inline;">
+
+					<div class="all"><li>All</li></div>
+					<div class="public"><li>Public</li></div>
+					<div class="private"><li>Private</li></div>
+					<div class="sources"><li>Sources</li></div>
+					<div class="forks"><li>Forks</li></div>
+					<div class="mirror"><li>Mirrors</li></div>
+
+					<div class="green-button" style="float: right;margin-left: 5px;"><li><button type="button" class="btn btn-default btn-sm" style="background-image: linear-gradient(#8add6d, #60b044);color: #fff;border-color: #5ca941;"><span class="octicon octicon-repo"></span>New</button></li></div>
+					
+			</ul>
+
+			<hr/>
+
+			<li class="main_meat">
+				<div class="right_side" style="float: right;color: #888888;font-size: 12px;">Ruby <span class="octicon octicon-star"></span>0 <span class="octicon octicon-git-branch"></span>5</div>
+				<h3 class="top_meat" style="font-weight: bold;color: #4183C4;">longest-word</h3>
+				<div class="under_top_meat" style="color: #888888;"><span class="octicon octicon-repo-forked"></span>forked from <span style="color: #4183C4;">dominathan/longest-word</span></div>
+				<div class="updated_meat" style="margin-top: 5px;color: #888888;">Updated 2 days ago</div>
+			</li>
+
+			<li class="main_meat">
+				<div class="right_side" style="float: right;color: #888888;font-size: 12px;">Ruby <span class="octicon octicon-star"></span>0 <span class="octicon octicon-git-branch"></span>5</div>
+				<h3 class="top_meat" style="font-weight: bold;color: #4183C4;">gethub</h3>
+				<div class="under_top_meat" style="color: #888888;"><span class="octicon octicon-repo-forked"></span>forked from <span style="color: #4183C4;">tiy-austin.ror-jan2015/gethub</span></div>
+				<div class="updated_meat" style="margin-top: 5px;color: #888888;">Updated 2 days ago</div>
+			</li>
+
+			<li class="main_meat">
+				<div class="right_side" style="float: right;color: #888888;font-size: 12px;">CSS<span class="octicon octicon-star"></span>0 <span class="octicon octicon-git-branch"></span>0</div>
+				<h3 class="top_meat" style="font-weight: bold;color: #4183C4;">week_two_website</h3>
+				<div class="under_top_meat" style="color: #666666;font-size: 14px;">Week Two Website</div>
+				<div class="updated_meat" style="margin-top: 5px;color: #888888;">Updated 2 days ago</div>
+			</li>
+
+			<li class="main_meat">
+				<div class="right_side" style="float: right;color: #888888;font-size: 12px;">Ruby<span class="octicon octicon-star"></span>0 <span class="octicon octicon-git-branch"></span>0</div>
+				<h3 class="top_meat" style="font-weight: bold;color: #4183C4;">Tic-Tac-Toe</h3>
+				<div class="under_top_meat" style="color: #666666;font-size: 14px;">Tic-Tac-Toe Game</div>
+				<div class="updated_meat" style="margin-top: 5px;color: #888888;">Updated 3 days ago</div>
+			</li>
+
+			<li class="main_meat">
+				<div class="right_side" style="float: right;color: #888888;font-size: 12px;">Ruby<span class="octicon octicon-star"></span>0 <span class="octicon octicon-git-branch"></span>1</div>
+				<h3 class="top_meat" style="font-weight: bold;color: #4183C4;">BlackJack</h3>
+				<div class="under_top_meat" style="color: #666666;font-size: 14px;">BlackJack Game</div>
+				<div class="updated_meat" style="margin-top: 5px;color: #888888;">Updated 7 days ago</div>
+			</li>
+
+			<li class="main_meat">
+				<div class="right_side" style="float: right;color: #888888;font-size: 12px;">Ruby<span class="octicon octicon-star"></span>0 <span class="octicon octicon-git-branch"></span>0</div>
+				<h3 class="top_meat" style="font-weight: bold;color: #4183C4;">Second_day</h3>
+				<div class="under_top_meat" style="color: #666666;font-size: 14px;">Second day of Class</div>
+				<div class="updated_meat" style="margin-top: 5px;color: #888888;">Updated 8 days ago</div>
+			</li>
+
+			<li class="main_meat">
+				<div class="right_side" style="float: right;color: #888888;font-size: 12px;">Ruby<span class="octicon octicon-star"></span>0 <span class="octicon octicon-git-branch"></span>0</div>
+				<h3 class="top_meat" style="font-weight: bold;color: #4183C4;">First-Day</h3>
+				<div class="under_top_meat" style="color: #666666;font-size: 14px;">Ruby on Rails repository for Jmingus</div>
+				<div class="updated_meat" style="margin-top: 5px;color: #888888;">Updated 9 days ago</div>
+			</li>
+
+
+    	</div>
+    </div>
+
+
+
+</div>
+</div>
+	<!--<div id="footer">
+	</div>-->
+
+		

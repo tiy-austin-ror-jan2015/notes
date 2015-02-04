@@ -1,0 +1,25 @@
+app/
+  |_ assets/
+      |_ stylesheets/
+      |   |- application.css
+      |_ javascripts/
+          |- application.js
+  |_ models/
+  |_ controllers/
+  |_ views/
+      |_ layouts/
+         |- application.html.erb
+config/
+  |-- routes.rb
+db/
+  |-- database.yml
+  |__ migrations/
+    |- 082432908782479-add_users.rb
+lib/
+spec/ (or test/)
+public/
+vendor/
+
+
+Gemfile
+Rakefile

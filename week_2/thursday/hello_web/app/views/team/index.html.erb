@@ -1,0 +1,9 @@
+<h1>Team Members</h1>
+<hr/>
+
+<% @team_members.each do |member| %>
+  <div class='member <%= 'special' if member[:eotm] == true %>'>
+  	<h3> <%= member[:name] %> </h3>
+  	<p><small> <%= member[:title] %> </small></p>
+  </div>
+<% end %>

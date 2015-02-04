@@ -1,0 +1,20 @@
+// Place all the styles related to the team controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.member {
+	display: inline-block;
+	width: 300px;
+	h3 {
+		margin: 20px auto 0px auto;
+		width: 50%;
+	}
+	p {
+		margin: 0 auto;
+		width: 50%;
+	}
+}
+
+.member.special {
+	background: yellow;
+}
