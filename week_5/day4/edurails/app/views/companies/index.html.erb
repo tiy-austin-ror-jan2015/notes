@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><h3>Our Companies</h3></th>
+      <th colspan="8"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= link_to 'Favorite', favorite_company_path(company), remote: true %></td>
+        <td>
+          <%= link_to company.name, company %>
+          <%= company.employee_count %>
+        </td>
+        <td><%= link_to 'Show', company %></td>
+        <td><%= link_to 'Edit', edit_company_path(company) %></td>
+        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New Company', new_company_path %>

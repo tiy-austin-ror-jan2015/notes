@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @course.title %>
+</p>
+
+<p>
+  <strong>Reqs:</strong>
+  <%= @course.reqs %>
+</p>
+
+<p>
+  <strong>Enrollment cap:</strong>
+  <%= @course.enrollment_cap %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @course.location.name %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @course.location.company.name %>
+</p>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

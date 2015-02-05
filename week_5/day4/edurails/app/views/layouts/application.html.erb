@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Edurails</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class='container'>
+    <nav>
+      <ul class="nav nav-pills">
+        <%= navigation_element('Home', root_path) %>
+        <%= navigation_element('Companies', companies_path) %>
+        <%= navigation_element('Locations', locations_path) %>
+        <%= navigation_element('Courses', courses_path) %>
+      </ul>
+    </nav>
+    <% if @last_company %>
+      <h4>Last Company Viewed</h4>
+      <p><%= link_to @last_company.name, @last_company %></p>
+      <%= navigation_element('Employees', company_employees_path(@last_company)) %>
+    <% end %>
+
+    <%= yield %>
+  </div>
+</body>
+</html>
