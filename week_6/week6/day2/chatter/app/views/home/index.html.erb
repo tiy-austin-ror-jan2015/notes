@@ -1,0 +1,50 @@
+<div class="stripe">
+
+
+<h1 class="title">Let's Chat!</h1>
+</div>
+<div class='container'>
+  <div class="row">
+    <div class="col-md-3">
+    <br />
+    <h3 role="presentation"><%= link_to 'Become A User', user_registration_path %></h3>
+    <% if user_signed_in? %>
+      <h3 role="presentation">Create New Chat</h3>
+      <div id="chatform">
+        <p><%= render 'chatform' %></p>
+      </div>
+    <% end %>
+
+    <script type="text/javascript">
+      jQuery(function($) {
+         $("#chatform")
+           .on("ajax:loading", console.log('loading'))
+           .on("ajax:complete", console.log('complete'))
+           .on("ajax:success", function(event, data, status, xhr) {
+             console.log(data);
+           })
+           .on("ajax:failure", function(xhr, status, error) {
+             console.log(error);
+           });
+       });
+</script>
+
+</div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-7">
+      <h3> Chats</h3><br />
+
+      <% @chats.each do |chat| %>
+
+            <p class="chats-main"><%= chat.message %></p>
+            <p class="time-stamp"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Created <%= time_ago_in_words(chat.created_at) %> ago by: <span class="prof"><%= link_to chat.user.profile_name, user_path(chat.user) %></span></p>
+
+
+
+      <% end %>
+    </div>
+
+
+</div>
+

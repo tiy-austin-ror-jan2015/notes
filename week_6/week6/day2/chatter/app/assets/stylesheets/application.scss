@@ -1,0 +1,52 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+.nav-title {
+  color: #FFFFFF;
+  position: absolute;
+  left: 25%;
+}
+
+.btn {
+  margin-top: 15px;
+}
+
+.btn-right {
+  float: right;
+  display: block;
+}
+
+body { padding-top: 50px; }
+
+.title {
+  text-align: center;
+  padding-top: 60px;
+  color: #67689A;
+}
+
+.stripe {
+  display: block;
+  height: 150px;
+  background-color: #30C6B5;
+  margin-top: 0px;
+}
+
+.chats-main {
+  font-size: 18px;
+}
+
+.col-md-7 {
+  padding-top: 25px;
+}
+
+.chats {
+  font-size: 18px;
+}
+
+.time-stamp {
+  margin-left: 20px;
+}
+
+.prof-name {
+  font-size: 24px;
+}
