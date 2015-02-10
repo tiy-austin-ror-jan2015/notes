@@ -1,0 +1,13 @@
+example:
+  students:
+    sally:
+      age: 9
+      favorite-foods:
+        - cookies
+        - cereals
+    billy:
+      age: 10
+      favorite-foods:
+        - fruits
+        - cookies
+
