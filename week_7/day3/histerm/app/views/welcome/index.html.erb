@@ -1,0 +1,23 @@
+<h2>Past Sessions</h2>
+<table class='table'>
+  <thead>
+    <tr>
+      <% Session.column_names.each do |attr| %>
+        <th><%= attr %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sessions.each do |session| %>
+      <tr>
+        <% session.attributes.values.each do |val| %>
+          <td>
+            <%= link_to session do %>
+              <%= val %>
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

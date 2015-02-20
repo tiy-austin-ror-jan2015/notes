@@ -1,0 +1,12 @@
+<%= simple_form_for([current_user, @post], multipart: true) do |f| %>
+  <%= f.input :user_id %>
+  <%= f.input :movie_title %>
+  <%= f.input :clip_url %>
+  <%= f.input :description %>
+  <%= f.input :poster_image %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                user_posts_path, :class => 'btn' %>
+  </div>
+<% end %>

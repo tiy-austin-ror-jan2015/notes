@@ -1,0 +1,9 @@
+<h1 id='title' data-slug='<%= @session.slug %>'><%= @session.title %></h1>
+<hr>
+<h3 id='commands' data-count='<%= @session.commands.count %>'>Commands </h3>
+<hr>
+<ol class='commands'>
+  <% @session.commands.each_with_index do |cmd, index| %>
+   <li>&nbsp;<pre><code><%= cmd.name %></code></pre></li>
+  <% end %>
+</ol>

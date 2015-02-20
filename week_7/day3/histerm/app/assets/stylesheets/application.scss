@@ -1,0 +1,42 @@
+    @import 'bootstrap-sprockets';
+    @import 'bootstrap';
+    @import 'commands';
+    @import 'sessions';
+
+    header {
+      height: 4.4em;
+      background: lightgreen;
+      border-bottom: 2px solid green;
+      h1 {
+        margin-top: 0;
+        padding-top: 0.4em;
+      }
+    }
+
+    footer {
+      color: #444;
+      position: fixed;
+      bottom: 0;
+      background: lightgreen;
+      border-top: 1px solid green;
+      width: 100%;
+      padding: 0.5em;
+
+      a, a:hover, a:visited {
+        color: inherit;
+        border-bottom: 1px solid;
+        font-weight: bold;
+        text-decoration: none;
+
+        &:hover {
+          border-bottom: 2px solid;
+        }
+      }
+
+      img {
+        width: 1.5%;
+        position:relative;
+        top: -1px;
+        left: 5px;
+      }
+    }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Histerm</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class='content'>
+    <header>
+        <h1>HisTerm</h1>
+    </header>
+    <div class='container'>
+     <div class='row'>
+       <div class='col-md-12'>
+
+          <main role='main'>
+            <%= yield %>
+          </main>
+        </div>
+      </div>
+    </div>
+    <footer>
+      Made with ♥ by <a href='http://justinherrick.com/'>Justin Herrick</a> for <a href='http://theironyard.com'>The Iron Yard</a><%= image_tag 'logo.svg' %>
+    </footer>
+  </div>
+</body>
+</html>

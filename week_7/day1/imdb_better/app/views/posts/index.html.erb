@@ -1,0 +1,30 @@
+<%- model_class = Post -%>
+<div class="page-header">
+  <h1>My Movies</h1>
+</div>
+<p><%= will_paginate @user_posts %></p>
+<table class="table table-striped">
+
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:movie_title) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user_posts.each do |post| %>
+      <tr>
+        <td><%= link_to post.movie_title, user_posts_path(post) %></td>
+        <td><%= post.user.try(:email) %></td>
+        <td><%= post.description %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_user_posts_path(:id),
+            :class => 'btn btn-primary' %>
+<p><%= will_paginate @user_posts %></p>

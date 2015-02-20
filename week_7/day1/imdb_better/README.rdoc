@@ -1,0 +1,4 @@
+IMDB_BETTER
+
+A simple IMDB clone that utilizes Devise, Paperclip,
+Aws, Bourbon and isn't built using scaffolding.

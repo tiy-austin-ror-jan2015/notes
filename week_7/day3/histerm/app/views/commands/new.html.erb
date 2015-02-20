@@ -1,0 +1,6 @@
+<h3>New Command for <%= @session.title %></h3>
+<%= simple_form_for([@session, @command], url: session_commands_path(@session.slug), class: 'form-horizontal') do |f| %>
+  <%= f.input :name %>
+  <%= f.input :desc %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>

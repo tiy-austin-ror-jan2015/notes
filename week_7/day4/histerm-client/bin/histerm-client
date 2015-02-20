@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+# vim: set ft=ruby:
+
+# This file executes as a bash script, which turns around and executes Ruby via
+# the line below. The -x argument to Ruby makes it discard everything before
+# the second "!ruby" shebang. This allows us to work on Linux, where the
+# shebang can only have one argument so we can't directly say
+# "#!/usr/bin/env ruby --disable-gems". Thanks for that, Linux.
+#
+# If this seems confusing, don't worry. You can treat it as a normal Ruby file
+# starting with the "!ruby" shebang below.
+
+exec /usr/bin/env ruby  -x "$0" $*
+#!ruby
+
+require 'net/http'
+require 'net/https'
+require 'json'
+require 'uri'
+
+HIST   = ENV['HOME'] + '/.history'
+HEROKU = 'https://histerm.herokuapp.com/'
+LOCAL  = 'http://localhost:3000/'
+NEW_SESSION = "#{HEROKU}sessions"
+SESSION_URL = -> slug { "#{NEW_SESSION}/#{slug}" }
+NEW_COMMAND = -> slug { "#{HEROKU}sessions/#{slug}/commands" }
+
+def post(url, params = {})
+  uri  = URI.parse(url)
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+  req  = Net::HTTP::Post.new(uri.request_uri, {'Content-Type' =>'application/json'})
+  req.body = params.to_json
+  http.request(req)
+end
+
+session = JSON.parse(post(NEW_SESSION).body)
+
+puts 'New session created'
+
+#puts 'URL copied to clipboard'
+#`pbcopy #{SESSION_URL}`
+# TODO: Add in OptionParser to only do one or the other here
+puts 'Opening page'
+`open #{SESSION_URL[session['slug']]}`
+
+
+puts 'Watching for commands'
+last_changed = File.mtime(HIST)
+loop do
+  if last_changed != File.mtime(HIST)
+    last_command = `tail -n 1 #{HIST}`.gsub(/^.*;/,'')
+    puts "Sending: #{last_command}"
+      post(NEW_COMMAND.call(session['slug']), {
+      command: {
+        name: last_command,
+        desc: ''
+      }
+    })
+    sleep 0.33
+    last_changed = File.mtime(HIST)
+  end
+end
