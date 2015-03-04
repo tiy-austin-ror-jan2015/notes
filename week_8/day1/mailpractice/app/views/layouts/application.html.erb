@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mailpractice</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-md-8'>
+        <header>
+          <ul>
+            <li><%= link_to "home", root_path %></li>
+            <li><%= link_to 'posts', posts_path    %></li>
+            <li><%= link_to 'comments', comments_path %></li>
+            <% if user_signed_in? %>
+              <li><%= link_to 'sign out', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to 'sign up', new_user_registration_path  %></li>
+              <li><%= link_to 'sign in', new_user_session_path  %></li>
+            <% end %>
+          </ul>
+        </header>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

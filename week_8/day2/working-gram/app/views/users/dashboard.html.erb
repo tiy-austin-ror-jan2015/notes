@@ -1,0 +1,24 @@
+<h1>Dashboard for <%= @user.name %></h1>
+
+<div class='row'>
+  <div class='col-md-8'>
+    <h3>Posts</h3>
+    <% @user.posts.each do |post| %>
+      <p><%= link_to post.title, post %></p>
+    <% end %>
+  </div>
+  <div clas='col-md-4'>
+    <h3>Latest Post Comments</h3>
+    <% @user.post_comments.each do |comment| %>
+      <p>-<%= comment.title %> (<%= comment.user.name %>)</p>
+    <% end %>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-md-8'>
+    <h3>Comments</h3>
+    <% @user.comments.each do |comment| %>
+      <p>-<%= comment.title %> on (<%= link_to comment.post.title, comment.post %>)</p>
+    <% end %>
+  </div>
+</div>
